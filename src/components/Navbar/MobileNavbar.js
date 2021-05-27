@@ -1,4 +1,7 @@
-import React from "react";
+
+import NavbarContextProvider, { NavbarContext } from '../../contexts/Navbar/NavbarContextProvider';
+
+import React, { useContext }from "react";
 import { Link } from "react-router-dom";
 
 import clsx from "clsx";
@@ -116,6 +119,8 @@ export default function MobileNavbar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const [state,setState] = useContext(NavbarContext);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -144,7 +149,7 @@ export default function MobileNavbar() {
             <ChevronRightIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            T. Piñero // Web Developer
+            {state.navbarTitle}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -174,7 +179,10 @@ export default function MobileNavbar() {
             (text, index) => (
               <ListItem className={classes.list}>
                 <Link to={'/'+text} className={classes.noStyleLink}>
-                <Button color="primary" className={classes.buttons}>
+                <Button color="primary" className={classes.buttons} onClick={function(){
+                    handleDrawerClose();
+                    setState({navbarTitle: text,});
+                }}>
                   {text}
                 </Button>
                 </Link>

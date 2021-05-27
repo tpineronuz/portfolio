@@ -1,6 +1,3 @@
-Layout  
-    Links to routes on buttons     
-
 Pages
     Desktop
         My Skills
@@ -9,6 +6,4 @@ Pages
     Mobile
         My Skills
         My Works 
-        Contact Me 
-
-
+        Contact Me
