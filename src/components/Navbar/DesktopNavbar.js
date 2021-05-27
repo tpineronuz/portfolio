@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import { Button, Link } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import logoHeader from "../../images/logo.png";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -29,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "-10px",
   },
   list: {
+    width: "100%",
+    height: "max-content",
+    padding: "0px",
+  },
+  noStyleLink: {
+    textDecoration: "none",
     width: "100%",
     height: "max-content",
     padding: "0px",
@@ -71,9 +78,11 @@ export default function DesktopNavbar() {
           {["About Me", "My Work", "My Skills", "Contact Me"].map(
             (text, index) => (
               <ListItem className={classes.list}>
-                <Button color="primary" className={classes.buttons}>
-                  {text}
-                </Button>
+                <Link to={"/" + text} className={classes.noStyleLink}>
+                  <Button color="primary" className={classes.buttons}>
+                    {text}
+                  </Button>
+                </Link>
               </ListItem>
             )
           )}
