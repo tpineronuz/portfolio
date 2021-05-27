@@ -1,5 +1,5 @@
-.about-container{
-  margin-top: 62px;
+.mywork-container {
+  padding-top: 62px;
 }
 
 .desktop {
@@ -11,8 +11,8 @@
 }
 
 @media (max-width: 900px) {
-  .about-container{
-    margin-top: 0px;
+  .mywork-container {
+    padding-top: 20px;
   }
   .mobile {
     display: block;

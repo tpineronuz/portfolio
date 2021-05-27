@@ -1,9 +1,8 @@
 Pages
     Desktop
-        My Skills
-        My Works 
         Contact Me 
     Mobile
-        My Skills
-        My Works 
         Contact Me
+
+
+Formating Documents and comment all the files 

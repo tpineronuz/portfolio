@@ -6,6 +6,8 @@ import Layout from "../components/Navbar/Layout";
 //Pages for routes
 import Home from "../pages/Home";
 import AboutMe from "../pages/AboutMe";
+import MySkills from "../pages/MySkills";
+import MyWork from '../pages/MyWork';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/About Me" component={AboutMe} />
+          <Route exact path="/My Skills" component={MySkills} />
+          
+          <Route exact path="/My Work" component={MyWork} />
         </Switch>
       </Layout>
     </BrowserRouter>

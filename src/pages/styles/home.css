@@ -5,3 +5,10 @@
     background-size: cover;
 }
 
+
+@media (max-width: 900px) {
+    #app{
+      background-position: center;
+    }
+  }
+  

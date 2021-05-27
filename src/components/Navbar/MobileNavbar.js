@@ -180,6 +180,9 @@ export default function MobileNavbar() {
               <ListItem className={classes.list}>
                 <Link to={'/'+text} className={classes.noStyleLink}>
                 <Button color="primary" className={classes.buttons} onClick={function(){
+                    if (text=='Home'){
+                      text='T.Piñero // Web Developer';
+                    }
                     handleDrawerClose();
                     setState({navbarTitle: text,});
                 }}>
