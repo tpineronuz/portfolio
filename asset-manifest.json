@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.f5c193d8.chunk.css",
+    "main.js": "/portfolio/static/js/main.5b358794.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.5b358794.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.e7c7cc43.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.e7c7cc43.js.map",
+    "static/js/2.0fee1a34.chunk.js": "/portfolio/static/js/2.0fee1a34.chunk.js",
+    "static/js/2.0fee1a34.chunk.js.map": "/portfolio/static/js/2.0fee1a34.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/main.f5c193d8.chunk.css.map": "/portfolio/static/css/main.f5c193d8.chunk.css.map",
+    "static/js/2.0fee1a34.chunk.js.LICENSE.txt": "/portfolio/static/js/2.0fee1a34.chunk.js.LICENSE.txt",
+    "static/media/AboutMe-photo.562429b4.jpg": "/portfolio/static/media/AboutMe-photo.562429b4.jpg",
+    "static/media/Home.css": "/portfolio/static/media/HomeBackground.056f373d.png",
+    "static/media/firstproject.bc1e0567.png": "/portfolio/static/media/firstproject.bc1e0567.png",
+    "static/media/itecphoto.d0a1e844.png": "/portfolio/static/media/itecphoto.d0a1e844.png",
+    "static/media/logo.1b82203e.png": "/portfolio/static/media/logo.1b82203e.png",
+    "static/media/secondproject.3ffb6170.png": "/portfolio/static/media/secondproject.3ffb6170.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e7c7cc43.js",
+    "static/js/2.0fee1a34.chunk.js",
+    "static/css/main.f5c193d8.chunk.css",
+    "static/js/main.5b358794.chunk.js"
+  ]
+}
