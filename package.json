@@ -2,7 +2,7 @@
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tpineronuz.github.io/portfolio/",
+  "homepage": "https://thomaspineronuz.me",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
@@ -21,7 +21,7 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "predeploy": "npm run build ",
+    "predeploy": "npm run build && echo thomaspineronuz.me > ./build/CNAME",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
