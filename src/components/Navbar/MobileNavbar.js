@@ -1,11 +1,12 @@
+import NavbarContextProvider, {
+  NavbarContext,
+} from "../../contexts/Navbar/NavbarContextProvider";
 
-import NavbarContextProvider, { NavbarContext } from '../../contexts/Navbar/NavbarContextProvider';
-
-import React, { useContext }from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import Switch from "@material-ui/core/Switch";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles, useTheme, withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -24,6 +25,39 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 const drawerWidth = 240;
 
+const AntSwitch = withStyles((theme) => ({
+  root: {
+    width: 32,
+    height: 20,
+    padding: 0,
+    display: "none",
+  },
+  switchBase: {
+    padding: 2,
+    color: "#5d5fcb",
+    "&$checked": {
+      transform: "translateX(12px)",
+      color: "#272727",
+      "& + $track": {
+        opacity: 1,
+        backgroundColor: "#5d5fcb",
+        borderColor: "#5d5fcb",
+      },
+    },
+  },
+  thumb: {
+    width: 16,
+    height: 16,
+    boxShadow: "none",
+  },
+  track: {
+    borderRadius: 32 / 2,
+    opacity: 1,
+    backgroundColor: "#272727",
+  },
+  checked: {},
+}))(Switch);
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -37,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
-    display: "none",
+    display: "flex",
     marginLeft: drawerWidth,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
@@ -46,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: "#cfd4cf",
   },
   hide: {
     display: "none",
@@ -56,7 +91,6 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-
     backgroundColor: "#171717",
   },
   drawerHeader: {
@@ -84,15 +118,26 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
   },
   handleIcon: {
-    color: "white",
+    color: "#cfd4cf",
+  },
+  titleRow: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    height: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  title: {
+    color: "#cfd4cf",
   },
   list: {
     width: "100%",
     height: "max-content",
     padding: "0px",
   },
-  noStyleLink:{
-    textDecoration:'none',
+  noStyleLink: {
+    textDecoration: "none",
     width: "100%",
     height: "max-content",
     padding: "0px",
@@ -118,8 +163,8 @@ export default function MobileNavbar() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
-  const [state,setState] = useContext(NavbarContext);
+  const [dark, setDark] = React.useState(true);
+  const [state, setState] = useContext(NavbarContext);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -127,6 +172,15 @@ export default function MobileNavbar() {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleThemeSwitch = () => {
+    if (dark) {
+      setDark(false);
+    } else {
+      setDark(true);
+    }
+    console.log(dark);
   };
 
   return (
@@ -148,9 +202,16 @@ export default function MobileNavbar() {
           >
             <ChevronRightIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            {state.navbarTitle}
-          </Typography>
+          <div className={classes.titleRow}>
+            <Typography variant="h6" noWrap className={classes.title}>
+              {state.navbarTitle}
+            </Typography>
+            <AntSwitch
+              checked={dark}
+              onChange={handleThemeSwitch}
+              name="checkedC"
+            />
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -178,16 +239,20 @@ export default function MobileNavbar() {
           {["Home", "About Me", "My Work", "My Skills", "Contact Me"].map(
             (text, index) => (
               <ListItem className={classes.list}>
-                <Link to={'/'+text} className={classes.noStyleLink}>
-                <Button color="primary" className={classes.buttons} onClick={function(){
-                    if (text=='Home'){
-                      text='T.Piñero // Web Developer';
-                    }
-                    handleDrawerClose();
-                    setState({navbarTitle: text,});
-                }}>
-                  {text}
-                </Button>
+                <Link to={"/" + text} className={classes.noStyleLink}>
+                  <Button
+                    color="primary"
+                    className={classes.buttons}
+                    onClick={function () {
+                      if (text == "Home") {
+                        text = "T.Piñero // Web Developer";
+                      }
+                      handleDrawerClose();
+                      setState({ navbarTitle: text });
+                    }}
+                  >
+                    {text}
+                  </Button>
                 </Link>
               </ListItem>
             )
@@ -200,7 +265,7 @@ export default function MobileNavbar() {
               className="contact"
               id="instagram"
               style={{
-                color: "#e0e4ff",
+                color: "#0072b1",
               }}
             />
           </a>
@@ -209,7 +274,7 @@ export default function MobileNavbar() {
               className="contact"
               id="instagram"
               style={{
-                color: "#4c63fc",
+                color: "#00acee",
               }}
             />
           </a>
