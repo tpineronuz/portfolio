@@ -1,7 +1,3 @@
-import NavbarContextProvider, {
-  NavbarContext,
-} from "../../contexts/Navbar/NavbarContextProvider";
-
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Switch from "@material-ui/core/Switch";
@@ -17,11 +13,14 @@ import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
-
 import { Button } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
+
+import NavbarContextProvider, {
+  NavbarContext,
+} from "../../contexts/Navbar/NavbarContextProvider";
 
 const drawerWidth = 240;
 

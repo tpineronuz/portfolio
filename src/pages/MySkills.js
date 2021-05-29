@@ -1,8 +1,7 @@
 import React from "react";
+import MySkillsMobile from "../components/MySkills/MySkillsMobile";
+import MySkillDesktop from "../components/MySkills/MySkillsDesktop";
 import "./styles/MySkills.css";
-
-import MySkillsMobile from '../components/MySkills/MySkillsMobile';
-import MySkillDesktop from '../components/MySkills/MySkillsDesktop';
 
 export default function MySkills() {
   return (

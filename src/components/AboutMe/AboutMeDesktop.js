@@ -1,31 +1,24 @@
 import React from "react";
-
-
+import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import itecPhoto from "../../images/itecphoto.png";
 import AboutMePhoto from "../../images/AboutMe-photo.jpg";
-
-import { makeStyles } from "@material-ui/core/styles";
-import './styles/AboutMeDesktop.css'
-
-
-import { Typography } from "@material-ui/core";
-
-
+import "./styles/AboutMeDesktop.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     height: "max-content",
     minHeight: "100vh",
-    marginLeft: '150px',
+    marginLeft: "150px",
     paddingTop: "20px",
     paddingLeft: "15px",
     paddingRight: "15px",
   },
-  column1:{
-    width:'50%',
-    display: 'flex',
-    flexDirection: 'column',
+  column1: {
+    width: "50%",
+    display: "flex",
+    flexDirection: "column",
   },
   title: {
     color: "#cfd4cf",
@@ -33,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: "bold",
     marginBottom: "10px",
-    textAlign:'center',
+    textAlign: "center",
     width: "100%",
   },
   paragraph: {
@@ -44,27 +37,26 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     textAlign: "center",
   },
-  column2:{
-    width:'50%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems:'center',
+  column2: {
+    width: "50%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
-  photo:{
-    marginTop: '20px',
-    marginLeft: '20px',
-    marginBottom: '50px',
-    width: '350px',
-    height: '200px',
-    borderRadius: '5px',
+  photo: {
+    marginTop: "20px",
+    marginLeft: "20px",
+    marginBottom: "50px",
+    width: "350px",
+    height: "200px",
+    borderRadius: "5px",
   },
-
 }));
 
 export default function AboutMeMobile() {
   const classes = useStyles();
   return (
-    <div className={classes.root} id='root'>
+    <div className={classes.root} id="root">
       <div className={classes.column1}>
         <Typography className={classes.title} variant="h1" gutterBottom>
           Who I am
@@ -101,10 +93,9 @@ export default function AboutMeMobile() {
         </Typography>
       </div>
       <div className={classes.column2}>
-          <img className={classes.photo} src={AboutMePhoto} alt="My Photo" />
-          <img className={classes.photo} src={itecPhoto} alt="iTec Photo" />
-        </div>
-      
+        <img className={classes.photo} src={AboutMePhoto} alt="My Photo" />
+        <img className={classes.photo} src={itecPhoto} alt="iTec Photo" />
+      </div>
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import React from "react";
+import emailjs from "emailjs-com";
 import { Formik, Form, Field } from "formik";
-import Button from "@material-ui/core/Button";
-import validationSchema from "./Schema";
-
-import emailjs from 'emailjs-com';
 import { TextField } from "formik-material-ui";
 import { makeStyles } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import validationSchema from "./Schema";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -38,11 +37,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 export default function ContactForm() {
   const classes = useStyles();
-  
+
   return (
     <div>
       <Formik
@@ -54,7 +51,12 @@ export default function ContactForm() {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
-          emailjs.send("gmail", "template_1izj55n", values ,"user_zIP6WvEAxnH19TbimRL51" )
+          emailjs.send(
+            "gmail",
+            "template_1izj55n",
+            values,
+            "user_zIP6WvEAxnH19TbimRL51"
+          );
           setSubmitting(false);
         }}
       >

@@ -1,8 +1,7 @@
 import React from "react";
-import "./styles/AboutMe.css";
-
 import AboutMeMobile from "../components/AboutMe/AboutMeMobile";
 import AboutMeDesktop from "../components/AboutMe/AboutMeDesktop";
+import "./styles/AboutMe.css";
 
 export default function AboutMe() {
   return (

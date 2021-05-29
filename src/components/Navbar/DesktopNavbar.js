@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import Switch from '@material-ui/core/Switch';
+import Switch from "@material-ui/core/Switch";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -15,36 +15,35 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
 
-
 const AntSwitch = withStyles((theme) => ({
   root: {
     width: 32,
     height: 20,
     padding: 0,
-    display: 'none',
+    display: "none",
   },
   switchBase: {
     padding: 2,
-    color: '#5d5fcb',
-    '&$checked': {
-      transform: 'translateX(12px)',
-      color: '#272727',
-      '& + $track': {
+    color: "#5d5fcb",
+    "&$checked": {
+      transform: "translateX(12px)",
+      color: "#272727",
+      "& + $track": {
         opacity: 1,
-        backgroundColor: '#5d5fcb',
-        borderColor: '#5d5fcb',
+        backgroundColor: "#5d5fcb",
+        borderColor: "#5d5fcb",
       },
     },
   },
   thumb: {
     width: 16,
     height: 16,
-    boxShadow: 'none',
+    boxShadow: "none",
   },
   track: {
     borderRadius: 32 / 2,
     opacity: 1,
-    backgroundColor: '#272727',
+    backgroundColor: "#272727",
   },
   checked: {},
 }))(Switch);
@@ -56,9 +55,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   appBar: {
-    paddingLeft:'150px',
+    paddingLeft: "150px",
     backgroundColor: "#171717",
-    },
+  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -71,12 +70,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     marginBottom: "-10px",
   },
-  titleRow:{
-    display:'flex',
-    flexDirection:'row',
-    width:'100%',
-    justifyContent:'space-between',
-    alignItems:'center',
+  titleRow: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   list: {
     width: "100%",
@@ -110,30 +109,33 @@ export default function DesktopNavbar() {
   const classes = useStyles();
 
   const [dark, setDark] = React.useState(true);
-  const [navbarTitle, setnavbarTitle] = React.useState('T.Piñero // Web Developer');
+  const [navbarTitle, setnavbarTitle] = React.useState(
+    "T.Piñero // Web Developer"
+  );
 
   const handleThemeSwitch = () => {
-    if (dark){
+    if (dark) {
       setDark(false);
-    }else {
+    } else {
       setDark(true);
-    };
+    }
     console.log(dark);
   };
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={classes.appBar}
-      >
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-        <div className={classes.titleRow}>
-          <Typography variant="h6" noWrap>
-            {navbarTitle}
-          </Typography>
-          <AntSwitch checked={dark} onChange={handleThemeSwitch} name="checkedC" />
+          <div className={classes.titleRow}>
+            <Typography variant="h6" noWrap>
+              {navbarTitle}
+            </Typography>
+            <AntSwitch
+              checked={dark}
+              onChange={handleThemeSwitch}
+              name="checkedC"
+            />
           </div>
         </Toolbar>
       </AppBar>
@@ -146,18 +148,27 @@ export default function DesktopNavbar() {
         anchor="left"
       >
         <Link to="/">
-          <img src={logoHeader} alt="logoHeader" className={classes.logo} onClick={function(){
-                    setnavbarTitle('T.Piñero // Web Developer');
-                }}/>
+          <img
+            src={logoHeader}
+            alt="logoHeader"
+            className={classes.logo}
+            onClick={function () {
+              setnavbarTitle("T.Piñero // Web Developer");
+            }}
+          />
         </Link>
         <List>
           {["About Me", "My Work", "My Skills", "Contact Me"].map(
             (text, index) => (
               <ListItem className={classes.list}>
                 <Link to={"/" + text} className={classes.noStyleLink}>
-                  <Button color="primary" className={classes.buttons} onClick={function(){
-                    setnavbarTitle(text);
-                }}>
+                  <Button
+                    color="primary"
+                    className={classes.buttons}
+                    onClick={function () {
+                      setnavbarTitle(text);
+                    }}
+                  >
                     {text}
                   </Button>
                 </Link>

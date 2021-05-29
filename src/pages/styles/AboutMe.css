@@ -1,4 +1,4 @@
-.about-container{
+.about-container {
   margin-top: 62px;
 }
 
@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 900px) {
-  .about-container{
+  .about-container {
     margin-top: 0px;
   }
   .mobile {

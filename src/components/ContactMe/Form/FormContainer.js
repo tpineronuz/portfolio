@@ -6,17 +6,16 @@ import ContactForm from "./ContactForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height:'max-content',
-    minHeight:'100vh',
-    
-    },
+    height: "max-content",
+    minHeight: "100vh",
+  },
 }));
 
 export default function FormContainer() {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="xl" id='root'>
+    <Container maxWidth="xl" id="root">
       <Grid
         container
         className={classes.root}

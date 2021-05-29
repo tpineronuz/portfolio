@@ -1,9 +1,8 @@
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import React, { Component } from "react";
+import WorkCard from "./WorkCard";
 import firstproject from "../../images/firstproject.png";
 import secondproject from "../../images/secondproject.png";
-
-import WorkCard from "./WorkCard";
 import "./styles/WorkList.css";
 
 const useStyles = makeStyles({
@@ -13,8 +12,7 @@ const useStyles = makeStyles({
     height: "max-content",
     minHeight: "100vh",
   },
-  list: {
-  },
+  list: {},
 });
 
 export default function WorkList() {
@@ -40,11 +38,18 @@ export default function WorkList() {
   };
   return (
     <div className={classes.root} id="root-work-list">
-      <Container maxWidth="xl" >
-        <Grid container className={classes.list} justify='center' alingContent='center' alingItems='center' spacing={3}>
+      <Container maxWidth="xl">
+        <Grid
+          container
+          className={classes.list}
+          justify="center"
+          alingContent="center"
+          alingItems="center"
+          spacing={3}
+        >
           {state.data.map((badge) => {
             return (
-              <Grid key={badge.id} item sm={4} xs={12} >
+              <Grid key={badge.id} item sm={4} xs={12}>
                 <WorkCard
                   name={badge.name}
                   description={badge.description}

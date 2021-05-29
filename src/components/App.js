@@ -1,14 +1,11 @@
-//Dependencies
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-//Layout
 import Layout from "../components/Navbar/Layout";
-//Pages for routes
 import Home from "../pages/Home";
 import AboutMe from "../pages/AboutMe";
 import MySkills from "../pages/MySkills";
-import MyWork from '../pages/MyWork';
-import ContactMe from '../pages/ContactMe';
+import MyWork from "../pages/MyWork";
+import ContactMe from "../pages/ContactMe";
 
 function App() {
   return (

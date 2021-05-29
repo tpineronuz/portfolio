@@ -1,5 +1,5 @@
-import { Container, Grid, makeStyles } from "@material-ui/core";
 import React, { Component } from "react";
+import { Container, Grid, makeStyles } from "@material-ui/core";
 import firstproject from "../../images/firstproject.png";
 import secondproject from "../../images/secondproject.png";
 import WorkCard from "./WorkCard";

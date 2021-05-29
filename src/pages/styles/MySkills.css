@@ -1,24 +1,22 @@
-
-.my-skill-container{
+.my-skill-container {
   margin-top: 62px;
 }
 .desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .my-skill-container {
+    margin-top: 0px;
+  }
+  .mobile {
     display: block;
   }
-  
-  .mobile {
+  .desktop {
     display: none;
   }
-  
-  @media (max-width: 900px) {
-    .my-skill-container{
-      margin-top: 0px;
-    }
-    .mobile {
-      display: block;
-    }
-    .desktop {
-      display: none;
-    }
-  }
-  
+}

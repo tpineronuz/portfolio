@@ -1,10 +1,8 @@
 import React from "react";
-import "./styles/Navbar.css";
-
 import NavbarContextProvider from "../../contexts/Navbar/NavbarContextProvider";
-
 import MobileNavbar from "./MobileNavbar";
 import DesktopNavbar from "./DesktopNavbar";
+import "./styles/Navbar.css";
 
 export default function Navar() {
   return (
