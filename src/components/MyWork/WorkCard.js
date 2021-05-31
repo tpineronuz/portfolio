@@ -71,8 +71,8 @@ export default function WorkCard(props) {
           height="150"
           image={props.image}
         />
-        <CardContent className={classes.content}>
-          <div className={classes.titleRow}>
+        <CardContent className={classes.content} onClick={handleExpandClick}>
+          <div className={classes.titleRow}  >
             <Typography
               className={classes.title}
               gutterBottom

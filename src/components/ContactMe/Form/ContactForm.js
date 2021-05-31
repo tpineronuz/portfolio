@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Formik, Form, Field } from "formik";
 import { TextField } from "formik-material-ui";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Snackbar } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import validationSchema from "./Schema";
 
@@ -40,6 +40,16 @@ const useStyles = makeStyles((theme) => ({
 export default function ContactForm() {
   const classes = useStyles();
 
+  const [open, setOpen] = useState(false);
+
+  const handleNotificationOpen = () => {
+    setOpen(true);
+  };
+
+  const handleNotificationClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <Formik
@@ -50,13 +60,14 @@ export default function ContactForm() {
           message: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           emailjs.send(
             "gmail",
             "template_1izj55n",
             values,
             "user_zIP6WvEAxnH19TbimRL51"
           );
+          resetForm();
           setSubmitting(false);
         }}
       >
@@ -104,10 +115,21 @@ export default function ContactForm() {
                 variant="contained"
                 color="primary"
                 disabled={isSubmitting}
-                onClick={submitForm}
+                onClick={function () {
+                  submitForm();
+                  handleNotificationOpen();
+                }}
               >
                 Send Message
               </Button>
+              <Snackbar
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleNotificationClose}
+                severity="success"
+                message="Your message has been sent, thank you."
+              ></Snackbar>
             </div>
           </Form>
         )}
